@@ -11,6 +11,7 @@ public class RouteToTrainTimeTable {
 
     @Column(nullable = false)
     private Integer route;
+private final static int lock = 2;
 
     @Column(nullable = false)
     private String train;
