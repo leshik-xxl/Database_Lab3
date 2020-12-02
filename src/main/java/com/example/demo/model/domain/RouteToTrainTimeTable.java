@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.model.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +14,7 @@ public class RouteToTrainTimeTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "route_id", nullable = false)
