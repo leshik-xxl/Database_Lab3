@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @NoArgsConstructor
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"number", "carriage_fk"})})
 public class Place {
 
     @Id
@@ -18,6 +19,7 @@ public class Place {
     @Column(nullable = false)
     private Integer number;
 
-    @Column(nullable = false)
-    private String carriage;
+    @ManyToOne
+    @JoinColumn(name = "carriage_fk", nullable = false)
+    private Carriage carriage;
 }

@@ -21,7 +21,7 @@ public class Ticket {
     private Client client;
 
     @OneToOne
-    @JoinColumn(name = "place_id", nullable = false)
+    @JoinColumn(name = "place_id", nullable = false, unique = true)
     private Place place;
 
     @Column(nullable = false)

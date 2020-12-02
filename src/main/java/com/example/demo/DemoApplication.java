@@ -38,18 +38,5 @@ public class DemoApplication implements CommandLineRunner {
 		client.setFullName("fillmnme");
 		clientRepository.saveAndFlush(client);
 
-		Place place = new Place();
-		place.setCarriage("car");
-		place.setNumber(1);
-		placeRepository.saveAndFlush(place);
-
-		Ticket ticket = new Ticket();
-		ticket.setClient(client);
-		ticket.setPlace(place);
-		ticket.setBuyDate(Timestamp.valueOf("2020-02-12 00:00:00"));
-		ticket.setPrice(BigDecimal.valueOf(200.0));
-		ticket.setPrivilege(true);
-		ticketRepository.saveAndFlush(ticket);
-		System.out.println(ticketRepository.findAll());
 	}
 }

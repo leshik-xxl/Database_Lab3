@@ -3,13 +3,12 @@ package com.example.demo.domain;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
 @NoArgsConstructor
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"number", "id"})})
 public class Carriage {
 
     @Id
@@ -21,6 +20,7 @@ public class Carriage {
     @Column(nullable = false)
     private Integer number;
 
-    @Column(nullable = false)
-    private Integer routeToTrainTimeTable;
+    @ManyToOne
+    @JoinColumn(name = "route_to_train_time_table", nullable = false)
+    private RouteToTrainTimeTable routeToTrainTimeTable;
 }
