@@ -12,6 +12,11 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class Train {
 
+    public Train(String idTrain, String maxCarriage){
+        this.idTrain = idTrain;
+        this.maxCarriage = Integer.parseInt(maxCarriage);
+    }
+
     @Id
     private String idTrain;
 

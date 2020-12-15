@@ -1,6 +1,5 @@
 package com.example.demo.sevice;
 
-import com.example.demo.model.domain.Carriage;
 import com.example.demo.model.domain.Train;
 import com.example.demo.repository.TrainRepository;
 import org.springframework.stereotype.Service;
@@ -19,5 +18,13 @@ public class TrainService {
 
     public Train findById(String id) throws Exception {
         return trainRepository.findById(id).orElseThrow(() -> new Exception("Не существует записи с данным id - " + id));
+    }
+
+    public void deleteById(String id){
+        trainRepository.deleteById(id);
+    }
+
+    public void setTrainMaxCarriage(String id, String maxCarriage){
+        trainRepository.setTrainMaxCarriage(id, Integer.parseInt(maxCarriage));
     }
 }

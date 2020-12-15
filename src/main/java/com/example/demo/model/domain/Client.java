@@ -10,6 +10,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Client {
 
+    public Client(String eMail, String login, String fullName){
+        this.eMail = eMail;
+        this.login = login;
+        this.fullName = fullName;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

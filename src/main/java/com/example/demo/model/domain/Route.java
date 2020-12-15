@@ -10,6 +10,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Route {
 
+    public Route(String placeOfDeparture, String placeOfArrival){
+        this.placeOfArrival = placeOfArrival;
+        this.placeOfDeparture = placeOfDeparture;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

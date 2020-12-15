@@ -1,6 +1,5 @@
 package com.example.demo.sevice;
 
-import com.example.demo.model.domain.Carriage;
 import com.example.demo.model.domain.Route;
 import com.example.demo.repository.RouteRepository;
 import org.springframework.stereotype.Service;
@@ -19,5 +18,13 @@ public class RouteService {
 
     public Route findById(Long id) throws Exception {
         return routeRepository.findById(id).orElseThrow(() -> new Exception("Не существует записи с данным id - " + id));
+    }
+
+    public void deleteById(Long id){
+        routeRepository.deleteById(id);
+    }
+
+    public void setRoutePlaceOfArrival(String id, String placeOfArrival){
+        routeRepository.setRoutePlaceOfArrival(Long.parseLong(id), placeOfArrival);
     }
 }

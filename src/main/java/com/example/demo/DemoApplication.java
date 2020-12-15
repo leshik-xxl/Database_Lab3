@@ -1,10 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.repository.CarriageRepository;
-import com.example.demo.repository.ClientRepository;
-import com.example.demo.repository.PlaceRepository;
-import com.example.demo.repository.TicketRepository;
-import com.example.demo.sevice.CarriageService;
+import com.example.demo.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,12 +12,22 @@ public class DemoApplication implements CommandLineRunner {
     private final TicketRepository ticketRepository;
     private final PlaceRepository placeRepository;
     private final CarriageRepository carriageRepository;
+    private final TrainRepository trainRepository;
+    private final RouteRepository routeRepository;
+    private final RouteToTrainRepository routeToTrainRepository;
 
-    public DemoApplication(ClientRepository clientRepository, TicketRepository ticketRepository, PlaceRepository placeRepository, CarriageRepository carriageRepository) {
+
+    public DemoApplication(ClientRepository clientRepository, TicketRepository ticketRepository,
+                           PlaceRepository placeRepository, CarriageRepository carriageRepository,
+                           TrainRepository trainRepository, RouteRepository routeRepository,
+                           RouteToTrainRepository routeToTrainRepository) {
         this.clientRepository = clientRepository;
         this.ticketRepository = ticketRepository;
         this.placeRepository = placeRepository;
         this.carriageRepository = carriageRepository;
+        this.trainRepository = trainRepository;
+        this.routeRepository = routeRepository;
+        this.routeToTrainRepository = routeToTrainRepository;
     }
 
     public static void main(String[] args) {
@@ -30,7 +36,6 @@ public class DemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-
 
     }
 }
